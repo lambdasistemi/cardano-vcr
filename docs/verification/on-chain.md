@@ -54,7 +54,7 @@ Transaction:
 ## Verifiable presentations
 
 A single transaction can verify credentials from multiple issuers — this is a
-verifiable presentation in W3C terms:
+[verifiable presentation][w3c-vp] in W3C terms:
 
 ```
 Transaction:
@@ -102,3 +102,5 @@ On-chain verification cost is dominated by Merkle proof verification:
 This is significantly cheaper than cross-contract calls on Ethereum, where
 verifying an EAS attestation requires SLOAD operations on the EAS contract's
 storage.
+
+[w3c-vp]: https://www.w3.org/TR/vc-data-model-2.0/#verifiable-presentations

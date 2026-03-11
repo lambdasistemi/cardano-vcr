@@ -1,7 +1,8 @@
 # Cardano VCR
 
-**Verifiable Credential Registry** — a [W3C Verifiable Credentials Data Model 2.0][w3c-vc]
-implementation on Cardano, built on [Merkle Patricia Forestry (MPFS)][mpfs].
+**Verifiable Credential Registry** — a
+[W3C Verifiable Credentials Data Model 2.0][w3c-vc] implementation on Cardano,
+built on [Merkle Patricia Forestry (MPFS)][mpfs].
 
 ## What is this?
 
@@ -12,8 +13,8 @@ enabling compact on-chain storage and efficient proof generation.
 
 ## Key properties
 
-- **W3C compliant** — implements the Verifiable Credentials Data Model 2.0, not a
-  proprietary attestation format
+- **W3C compliant** — implements the [Verifiable Credentials Data Model 2.0][w3c-vc],
+  not a proprietary attestation format
 - **Merkle proof verification** — any Plutus validator or off-chain entity can
   verify credentials via compact inclusion proofs
 - **Proof of non-membership** — can prove a credential does NOT exist (revocation
@@ -27,9 +28,9 @@ enabling compact on-chain storage and efficient proof generation.
 
 Cardano VCR uses three tiers of [MPFS cages](architecture/three-tier-cages.md):
 
-1. **Schema authorities** manage schema registries (mostly append-only)
-2. **Credential issuers** manage credential tries (insert + revoke)
-3. **Verifiers** consume Merkle proofs (on-chain or off-chain)
+1. **[Schema authorities][w3c-registry]** manage schema registries (mostly append-only)
+2. **[Credential issuers][w3c-issuer]** manage credential tries (insert + revoke)
+3. **[Verifiers][w3c-verifier]** consume Merkle proofs (on-chain or off-chain)
 
 Each tier is a separate MPFS cage instance. Cages are independent — a compromised
 or rogue authority only affects its own data. Trust is a policy decision made by
@@ -46,6 +47,9 @@ verifiers, not enforced by the protocol.
 | VCR protocol layer | This repository | Design phase |
 
 [w3c-vc]: https://www.w3.org/TR/vc-data-model-2.0/
+[w3c-issuer]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers
+[w3c-verifier]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier
+[w3c-registry]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries
 [mpfs]: https://github.com/cardano-foundation/cardano-mpfs-onchain
 [onchain]: https://github.com/cardano-foundation/cardano-mpfs-onchain
 [offchain]: https://github.com/paolino/cardano-mpfs-offchain
