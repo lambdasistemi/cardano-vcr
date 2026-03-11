@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lambdasistemi.github.io/cardano-vcr/protocol/supply-chain-comparison/">
+      
+      
+        <link rel="prev" href="../eas-comparison/">
+      
+      
+        <link rel="next" href="../../architecture/three-tier-cages/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Comparison with Supply Chain Security - Cardano VCR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comparison-with-supply-chain-security-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cardano VCR" class="md-header__button md-logo" aria-label="Cardano VCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cardano VCR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comparison with Supply Chain Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lambdasistemi/cardano-vcr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cardano VCR" class="md-nav__button md-logo" aria-label="Cardano VCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Cardano VCR
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lambdasistemi/cardano-vcr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Protocol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w3c-alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    W3C Alignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eas-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison with EAS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison with Supply Chain Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison with Supply Chain Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sigstore-and-rekor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sigstore and Rekor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sigstore and Rekor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-sigstore-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Sigstore works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rekor-the-closest-analog-to-mpfs-cages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rekor: the closest analog to MPFS cages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key differences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuf-the-update-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TUF (The Update Framework)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TUF (The Update Framework)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tuf-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TUF architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-to-cardano-vcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping to Cardano VCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key differences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-toto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        in-toto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="in-toto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-toto-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        in-toto architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-to-cardano-vcr_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping to Cardano VCR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-differences_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key differences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-cutting-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-cutting comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-cardano-vcr-learns-from-these-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Cardano VCR learns from these systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Cardano VCR learns from these systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-rekor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Rekor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-tuf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From TUF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-in-toto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From in-toto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/three-tier-cages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Tier Cages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/schema-authorities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema Authorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/credential-issuers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential Issuers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/resolvers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resolvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/on-off-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On-chain and Off-chain Credentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Verification
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/on-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On-chain Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/off-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Off-chain Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../verification/trust-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trust Chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Protocol
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="comparison-with-supply-chain-security-systems">Comparison with Supply Chain Security Systems</h1>
+<p>Beyond <a href="../eas-comparison/">EAS</a> in the blockchain space, there is a mature
+ecosystem of non-blockchain systems that use Merkle trees and cryptographic
+attestations for trust — specifically in the <strong>software supply chain security</strong>
+domain. These systems validate the same core idea behind Cardano VCR: that
+Merkle-tree-based attestation registries are a proven pattern for verifiable
+claims.</p>
+<p>This page compares Cardano VCR with four key systems:
+<a href="#sigstore-and-rekor">Sigstore/Rekor</a>, <a href="#tuf-the-update-framework">TUF</a>, and
+<a href="#in-toto">in-toto</a>.</p>
+<h2 id="sigstore-and-rekor">Sigstore and Rekor</h2>
+<p><a href="https://docs.sigstore.dev/">Sigstore</a> is the dominant open-source solution for software artifact
+signing. It consists of three components:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cosign</strong></td>
+<td>Client tool for signing and verifying artifacts</td>
+</tr>
+<tr>
+<td><strong>Fulcio</strong></td>
+<td>Certificate authority — issues short-lived signing certificates tied to OIDC identities (GitHub Actions, Google, etc.)</td>
+</tr>
+<tr>
+<td><strong>Rekor</strong></td>
+<td>Transparency log — append-only Merkle tree of signed attestations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-sigstore-works">How Sigstore works</h3>
+<ol>
+<li>A CI system (e.g. GitHub Actions) authenticates via OIDC</li>
+<li><strong>Fulcio</strong> issues a short-lived certificate binding the CI identity to an
+   ephemeral signing key</li>
+<li>The artifact is signed with the ephemeral key</li>
+<li>The signature + certificate are recorded in <strong>Rekor</strong> (append-only
+   transparency log)</li>
+<li>A verifier checks: (a) the signature is valid, (b) the certificate was
+   issued by Fulcio, (c) the entry exists in Rekor's Merkle tree</li>
+</ol>
+<p>The private key only exists in memory during signing — it is never stored. Trust
+is anchored to the OIDC identity provider and the Rekor transparency log.</p>
+<h3 id="rekor-the-closest-analog-to-mpfs-cages">Rekor: the closest analog to MPFS cages</h3>
+<p>Rekor is structurally very similar to an MPFS cage in append-only mode:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Rekor</th>
+<th>MPFS Cage (append-only)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data structure</td>
+<td>Merkle tree (append-only log)</td>
+<td>Merkle Patricia Trie (append-only mode)</td>
+</tr>
+<tr>
+<td>Entries</td>
+<td>Signed attestations (signature + certificate + artifact hash)</td>
+<td>Credential values (claims + metadata)</td>
+</tr>
+<tr>
+<td>Inclusion proofs</td>
+<td>Yes — prove an entry exists in the log</td>
+<td>Yes — prove a credential exists in the trie</td>
+</tr>
+<tr>
+<td>Non-membership proofs</td>
+<td>No (log structure doesn't support this)</td>
+<td><strong>Yes</strong> — prove a credential does NOT exist</td>
+</tr>
+<tr>
+<td>Append-only guarantee</td>
+<td>Server-side policy + auditor monitoring</td>
+<td><strong>On-chain validator enforcement</strong></td>
+</tr>
+<tr>
+<td>Trust anchor</td>
+<td>Rekor server operator (currently Sigstore project)</td>
+<td>Cage oracle identity (on-chain, verifiable)</td>
+</tr>
+<tr>
+<td>Tamper evidence</td>
+<td>Merkle tree consistency proofs + signed tree heads</td>
+<td>Blockchain immutability + validator rules</td>
+</tr>
+<tr>
+<td>Deletion</td>
+<td>Not possible (log is append-only)</td>
+<td>Configurable per cage (can be forbidden)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-differences">Key differences</h3>
+<p><strong>Trust model</strong>: Rekor requires trusting the Rekor server operator. If the
+operator is compromised, they could present different views of the log to
+different users (a "split-view" attack). Auditors can detect this, but only
+after the fact. In Cardano VCR, the cage root is on-chain — there is one
+canonical state visible to everyone. Split-view attacks are impossible because
+the blockchain provides a single source of truth.</p>
+<p><strong>Append-only enforcement</strong>: Rekor's append-only property is a server policy,
+enforced by auditor monitoring. An MPFS cage's append-only property (when
+configured) is enforced by the <strong>Plutus validator</strong> — the blockchain rejects
+transactions that violate it. This is a stronger guarantee: enforcement is
+cryptographic and automated, not dependent on monitoring.</p>
+<p><strong>Non-membership proofs</strong>: Rekor cannot prove that an entry does NOT exist in
+the log (the log structure only supports inclusion proofs). MPFS tries support
+non-membership proofs natively. This matters for revocation — you can prove a
+credential was revoked, not just that it once existed.</p>
+<p><strong>Decentralization</strong>: Rekor is operated by a single entity (the Sigstore
+project). MPFS cages are operated by independent entities, each running their
+own instance. There is no central log.</p>
+<h2 id="tuf-the-update-framework">TUF (The Update Framework)</h2>
+<p><a href="https://theupdateframework.io/">TUF</a> is a framework for securing software update systems. It defines a
+role-based trust model with key delegation and threshold signatures.</p>
+<h3 id="tuf-architecture">TUF architecture</h3>
+<p>TUF defines four top-level roles:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Root</strong></td>
+<td>Trusted keys for all other roles. Rarely updated, highest security.</td>
+</tr>
+<tr>
+<td><strong>Targets</strong></td>
+<td>Signs the actual software artifacts. Can delegate to sub-roles.</td>
+</tr>
+<tr>
+<td><strong>Snapshot</strong></td>
+<td>Signs a consistent view of all target metadata.</td>
+</tr>
+<tr>
+<td><strong>Timestamp</strong></td>
+<td>Signs the current snapshot, providing freshness guarantees.</td>
+</tr>
+</tbody>
+</table>
+<p>Key properties:</p>
+<ul>
+<li><strong>Key delegation</strong>: the Targets role can delegate trust to sub-roles, each
+  responsible for a subset of artifacts. Delegation can be further nested.</li>
+<li><strong>Threshold signatures</strong>: each role requires M-of-N signatures, so
+  compromising a single key is insufficient.</li>
+<li><strong>Compromise resilience</strong>: separating roles means a compromised Timestamp key
+  (rotated frequently) doesn't compromise the Root key (stored offline).</li>
+</ul>
+<h3 id="mapping-to-cardano-vcr">Mapping to Cardano VCR</h3>
+<p>TUF's role hierarchy maps closely to VCR's three-tier cage architecture:</p>
+<table>
+<thead>
+<tr>
+<th>TUF Concept</th>
+<th>Cardano VCR Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root role</td>
+<td>Schema authority cage (trusted root of the hierarchy)</td>
+</tr>
+<tr>
+<td>Targets role</td>
+<td>Credential issuer cage (signs/issues the actual credentials)</td>
+</tr>
+<tr>
+<td>Key delegation</td>
+<td>Schema authority registers schemas; issuers reference them</td>
+</tr>
+<tr>
+<td>Threshold signatures</td>
+<td>Multi-signature resolvers (require M-of-N signatories)</td>
+</tr>
+<tr>
+<td>Snapshot/Timestamp</td>
+<td>Cage root on-chain (provides both consistency and freshness)</td>
+</tr>
+<tr>
+<td>Compromise resilience</td>
+<td>Independent cages — compromising one doesn't affect others</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-differences_1">Key differences</h3>
+<p><strong>Scope</strong>: TUF secures software update distribution. Cardano VCR secures
+arbitrary verifiable credentials. TUF's domain is narrower but its role model
+is more elaborate (four mandatory roles with specific rotation policies).</p>
+<p><strong>Key management</strong>: TUF's strength is its detailed key rotation and delegation
+model. Cardano VCR delegates this to the cage oracle's key management. TUF is
+more prescriptive about how keys should be managed; VCR leaves this to the
+issuer.</p>
+<p><strong>Freshness</strong>: TUF uses a dedicated Timestamp role to guarantee clients see the
+latest metadata. In Cardano VCR, freshness comes from the blockchain itself —
+the cage UTxO's datum is the latest state, and the block timestamp provides
+temporal ordering.</p>
+<p><strong>Offline verification</strong>: Both support offline verification. TUF clients cache
+metadata and verify signatures locally. VCR verifiers cache CSMT roots and
+verify Merkle proofs locally.</p>
+<h2 id="in-toto">in-toto</h2>
+<p><a href="https://in-toto.io/">in-toto</a> is a framework for securing the integrity of software supply
+chains. It focuses on <strong>process attestation</strong> — proving that specific steps were
+performed by authorized parties in the correct order.</p>
+<h3 id="in-toto-architecture">in-toto architecture</h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Layout</strong></td>
+<td>A project owner defines the supply chain: steps, authorized functionaries, and artifact flow rules</td>
+</tr>
+<tr>
+<td><strong>Link metadata</strong></td>
+<td>Each functionary records what they did: command, input artifacts, output artifacts</td>
+</tr>
+<tr>
+<td><strong>Attestation</strong></td>
+<td>A signed statement about a supply chain step (e.g. "source was reviewed", "build was reproducible")</td>
+</tr>
+</tbody>
+</table>
+<p>The layout chains links together: step A's outputs must match step B's inputs.
+A verifier checks that (a) each step was performed by an authorized functionary,
+(b) artifacts flow correctly between steps, and (c) no unauthorized
+modifications occurred.</p>
+<h3 id="mapping-to-cardano-vcr_1">Mapping to Cardano VCR</h3>
+<p>in-toto's attestation model maps to VCR's referenced credentials:</p>
+<table>
+<thead>
+<tr>
+<th>in-toto Concept</th>
+<th>Cardano VCR Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Layout (supply chain definition)</td>
+<td>Schema (defines what a credential must contain)</td>
+</tr>
+<tr>
+<td>Functionary</td>
+<td>Credential issuer (authorized to perform a step)</td>
+</tr>
+<tr>
+<td>Link metadata</td>
+<td>Credential (attests that a step was performed)</td>
+</tr>
+<tr>
+<td>Artifact chaining (step A output → step B input)</td>
+<td>Referenced credentials (<code>refUID</code> — credential B references credential A)</td>
+</tr>
+<tr>
+<td>Project owner</td>
+<td>Schema authority (defines the process)</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Merkle proof chain across multiple issuer cages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-differences_2">Key differences</h3>
+<p><strong>Process vs state</strong>: in-toto attests to a <strong>process</strong> (a sequence of steps).
+Cardano VCR attests to <strong>state</strong> (a set of claims at a point in time). in-toto's
+chaining model (step outputs → step inputs) has no direct VCR equivalent,
+though <code>refUID</code> provides a weaker form of linkage.</p>
+<p><strong>Artifact binding</strong>: in-toto binds attestations to specific file hashes. VCR
+credentials are more general — they can attest to anything, not just software
+artifacts.</p>
+<p><strong>Enforcement</strong>: in-toto's layout enforcement is done at verification time by
+the client. The layout is a policy document, not an on-chain constraint. In VCR,
+schema and resolver enforcement happens at issuance time via on-chain validators.</p>
+<h2 id="cross-cutting-comparison">Cross-cutting comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Rekor</th>
+<th>TUF</th>
+<th>in-toto</th>
+<th>Cardano VCR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data structure</strong></td>
+<td>Append-only Merkle log</td>
+<td>Signed metadata files</td>
+<td>Signed link metadata</td>
+<td>Merkle Patricia Trie</td>
+</tr>
+<tr>
+<td><strong>Inclusion proofs</strong></td>
+<td>Yes</td>
+<td>No (metadata is downloaded whole)</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Non-membership proofs</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><strong>Trust anchor</strong></td>
+<td>Rekor server operator</td>
+<td>Root keys (offline)</td>
+<td>Project owner keys</td>
+<td>On-chain cage UTxO</td>
+</tr>
+<tr>
+<td><strong>Append-only enforcement</strong></td>
+<td>Server policy + auditors</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>On-chain validator</td>
+</tr>
+<tr>
+<td><strong>Key delegation</strong></td>
+<td>Via Fulcio (OIDC)</td>
+<td>Explicit role hierarchy</td>
+<td>Layout defines functionaries</td>
+<td>Schema authorities + resolvers</td>
+</tr>
+<tr>
+<td><strong>Decentralized</strong></td>
+<td>No (single operator)</td>
+<td>No (single repo)</td>
+<td>No (single project owner)</td>
+<td><strong>Yes</strong> (independent cages)</td>
+</tr>
+<tr>
+<td><strong>Split-view resistance</strong></td>
+<td>Auditor-dependent</td>
+<td>N/A</td>
+<td>N/A</td>
+<td><strong>Blockchain consensus</strong></td>
+</tr>
+<tr>
+<td><strong>Revocation</strong></td>
+<td>Not supported</td>
+<td>Key rotation</td>
+<td>N/A</td>
+<td>Delete from trie</td>
+</tr>
+<tr>
+<td><strong>Offline verification</strong></td>
+<td>Inclusion proof + cached tree head</td>
+<td>Cached metadata</td>
+<td>Cached layout + links</td>
+<td>Cached CSMT root + Merkle proofs</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>Custom (OpenSSF)</td>
+<td>Custom (CNCF/Linux Foundation)</td>
+<td><a href="https://slsa.dev/">SLSA</a> provenance format</td>
+<td><a href="https://www.w3.org/TR/vc-data-model-2.0/">W3C VC Data Model 2.0</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-cardano-vcr-learns-from-these-systems">What Cardano VCR learns from these systems</h2>
+<h3 id="from-rekor">From Rekor</h3>
+<p>The transparency log model validates the core VCR design: a Merkle tree of
+attestations with inclusion proofs, operated by an authority, verifiable by
+anyone. VCR adds non-membership proofs, decentralization (multiple independent
+cages), and on-chain enforcement of append-only policies.</p>
+<h3 id="from-tuf">From TUF</h3>
+<p>The role-based key delegation model is more sophisticated than VCR's current
+design. VCR could benefit from formalizing key rotation policies for schema
+authorities and credential issuers, and from supporting threshold signatures
+natively (currently available via multi-signature resolvers).</p>
+<h3 id="from-in-toto">From in-toto</h3>
+<p>The process attestation model (chaining steps via artifact hashes) suggests
+that VCR's <code>refUID</code> mechanism could be formalized into a <strong>credential chain</strong>
+pattern — a sequence of credentials where each one references the previous,
+forming a verifiable supply chain or workflow audit trail.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.sections", "navigation.path", "toc.integrate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
