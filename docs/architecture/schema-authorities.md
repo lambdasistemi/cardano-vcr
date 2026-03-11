@@ -1,7 +1,8 @@
 # Schema Authorities
 
-Schema authorities manage registries of credential schemas. Each authority
-operates an independent MPFS cage with its own governance policy.
+Schema authorities manage registries of [credential schemas][w3c-schemas]. Each
+authority operates an independent MPFS cage with its own governance policy,
+functioning as a [verifiable data registry][w3c-registry] in W3C terms.
 
 ## Why multiple authorities?
 
@@ -108,3 +109,6 @@ To verify that a credential's schema is valid:
 
 This is the same proof mechanism used for credentials — consistent across the
 entire protocol.
+
+[w3c-schemas]: https://www.w3.org/TR/vc-data-model-2.0/#data-schemas
+[w3c-registry]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries

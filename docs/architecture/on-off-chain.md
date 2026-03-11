@@ -1,7 +1,11 @@
 # On-chain and Off-chain Credentials
 
-Cardano VCR supports three credential modes, each offering a different tradeoff
-between privacy, verifiability, and on-chain cost.
+The W3C specification supports both [embedded and enveloping proofs][w3c-securing]
+as securing mechanisms. Cardano VCR extends this with three credential modes,
+each offering a different tradeoff between privacy, verifiability, and on-chain
+cost.
+
+[w3c-securing]: https://www.w3.org/TR/vc-data-model-2.0/#securing-mechanisms
 
 ## Mode 1: On-chain credentials
 

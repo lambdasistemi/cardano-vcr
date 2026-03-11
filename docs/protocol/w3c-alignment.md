@@ -6,16 +6,16 @@ concept from the specification to its Cardano VCR counterpart.
 
 ## Ecosystem roles
 
-The W3C specification defines four roles:
+The W3C specification defines four [ecosystem roles][w3c-ecosystem]:
 
 | W3C Role | Definition | Cardano VCR |
 |----------|-----------|-------------|
-| **Issuer** | Asserts claims, creates credentials, transmits to holder | Credential cage oracle (cage token owner) |
-| **Holder** | Possesses credentials, creates presentations | Wallet receiving Merkle proofs |
-| **Verifier** | Receives and processes credentials/presentations | Plutus validator or off-chain entity |
-| **Verifiable Data Registry** | Mediates creation/verification of identifiers, schemas, revocation registries | MPFS cages (both schema and credential) |
+| [**Issuer**][w3c-issuer] | Asserts claims, creates credentials, transmits to holder | Credential cage oracle (cage token owner) |
+| [**Holder**][w3c-holder] | Possesses credentials, creates presentations | Wallet receiving Merkle proofs |
+| [**Verifier**][w3c-verifier] | Receives and processes credentials/presentations | Plutus validator or off-chain entity |
+| [**Verifiable Data Registry**][w3c-registry] | Mediates creation/verification of identifiers, schemas, revocation registries | MPFS cages (both schema and credential) |
 
-The specification states:
+The specification [states][w3c-issuer]:
 
 > "A role an entity can perform by asserting claims about one or more subjects,
 > creating a verifiable credential from these claims, and transmitting it to a
@@ -27,35 +27,35 @@ issuer to their credentials.
 
 ## Credential data model
 
-The W3C specification defines required and optional properties for verifiable
-credentials. Here is how each maps to Cardano VCR:
+The W3C specification defines required and optional properties for
+[verifiable credentials][w3c-vc-concept]. Here is how each maps to Cardano VCR:
 
 ### Required properties
 
 | W3C Property | W3C Requirement | Cardano VCR |
 |-------------|----------------|-------------|
-| `@context` | Must include `https://www.w3.org/ns/credentials/v2` | Encoded in credential value; verifiers know the context from the protocol |
-| `type` | Must include `VerifiableCredential` | Implicit — all trie entries under a credential cage are credentials |
-| `issuer` | Entity asserting claims | Cage token ID identifies the issuer |
-| `credentialSubject` | Entity about which claims are made | Part of the credential trie value |
-| `validFrom` | Issuance timestamp | `time` field in the credential value |
+| [`@context`][w3c-contexts] | Must include `https://www.w3.org/ns/credentials/v2` | Encoded in credential value; verifiers know the context from the protocol |
+| [`type`][w3c-vc-concept] | Must include `VerifiableCredential` | Implicit — all trie entries under a credential cage are credentials |
+| [`issuer`][w3c-issuer-prop] | Entity asserting claims | Cage token ID identifies the issuer |
+| [`credentialSubject`][w3c-subject] | Entity about which claims are made | Part of the credential trie value |
+| [`validFrom`][w3c-validity] | Issuance timestamp | `time` field in the credential value |
 
 ### Optional properties
 
 | W3C Property | Cardano VCR |
 |-------------|-------------|
-| `id` | Trie key = `blake2b(schema_uid ++ recipient ++ nonce)` |
-| `validUntil` | `expiration` field in credential value |
-| `credentialSchema` | Reference to schema authority cage token ID + schema key |
-| `credentialStatus` | **Trie membership IS the status** — present = valid, absent = revoked |
-| `evidence` | Can be included in value or referenced off-chain |
+| [`id`][w3c-identifiers] | Trie key = `blake2b(schema_uid ++ recipient ++ nonce)` |
+| [`validUntil`][w3c-validity] | `expiration` field in credential value |
+| [`credentialSchema`][w3c-schemas] | Reference to schema authority cage token ID + schema key |
+| [`credentialStatus`][w3c-status] | **Trie membership IS the status** — present = valid, absent = revoked |
+| [`evidence`][w3c-evidence] | Can be included in value or referenced off-chain |
 | `proof` | Merkle proof against the cage root |
 | `refreshService` | Not applicable (trie is always current) |
 | `termsOfUse` | Can be encoded in schema or credential metadata |
 
 ### The `credentialStatus` insight
 
-The W3C specification says:
+The W3C specification [says][w3c-status]:
 
 > "When an issuer desires to enable status information for a verifiable
 > credential, they MAY add a `credentialStatus` property."
@@ -73,12 +73,13 @@ This has two advantages over status lists:
 
 ## Verifiable presentations
 
-The specification defines:
+The specification [defines][w3c-presentations]:
 
 > "Data derived from one or more verifiable credentials issued by one or more
 > issuers that is shared with a specific verifier."
 
-In Cardano VCR, a verifiable presentation is a **Cardano transaction** containing:
+In Cardano VCR, a [verifiable presentation][w3c-vp] is a **Cardano transaction**
+containing:
 
 - Multiple **reference inputs** (one per issuer cage, providing the credential
   roots)
@@ -93,7 +94,7 @@ proof package that a verifier processes without blockchain interaction.
 
 ## Trust model
 
-The specification states:
+The specification [states][w3c-trust]:
 
 > "Verifiability of a credential does not imply the truth of claims encoded
 > therein."
@@ -115,7 +116,7 @@ A verifier (Plutus validator or off-chain service) decides:
 
 ## Verifiable Data Registry
 
-The specification defines:
+The specification [defines][w3c-registry]:
 
 > "A system performing a role by mediating creation and verification of
 > identifiers, verification material, schemas, revocation registries, and other
@@ -128,7 +129,7 @@ data in the registry.
 
 ## Securing mechanisms
 
-The specification requires:
+The specification [requires][w3c-securing]:
 
 > "A conforming document MUST be secured by at least one securing mechanism."
 
@@ -150,6 +151,8 @@ verifiability) rather than prescribing specific cryptographic schemes.
 
 ### Conforming issuer
 
+The specification [requires][w3c-conformance]:
+
 > "Produces conforming documents, MUST include all required properties, and MUST
 > secure documents using a securing mechanism."
 
@@ -165,5 +168,27 @@ On-chain verifiers (Plutus validators) verify Merkle proofs against cage roots
 via reference inputs. Off-chain verifiers verify proof bundles against trusted
 roots. Both reject invalid proofs.
 
+<!-- W3C VC Data Model 2.0 references -->
 [w3c-vc]: https://www.w3.org/TR/vc-data-model-2.0/
+[w3c-ecosystem]: https://www.w3.org/TR/vc-data-model-2.0/#ecosystem-overview
+[w3c-issuer]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers
+[w3c-holder]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders
+[w3c-verifier]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier
+[w3c-registry]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries
+[w3c-vc-concept]: https://www.w3.org/TR/vc-data-model-2.0/#verifiable-credentials
+[w3c-contexts]: https://www.w3.org/TR/vc-data-model-2.0/#contexts
+[w3c-identifiers]: https://www.w3.org/TR/vc-data-model-2.0/#identifiers
+[w3c-issuer-prop]: https://www.w3.org/TR/vc-data-model-2.0/#issuer
+[w3c-subject]: https://www.w3.org/TR/vc-data-model-2.0/#credential-subject
+[w3c-validity]: https://www.w3.org/TR/vc-data-model-2.0/#validity-period
+[w3c-schemas]: https://www.w3.org/TR/vc-data-model-2.0/#data-schemas
+[w3c-status]: https://www.w3.org/TR/vc-data-model-2.0/#status
+[w3c-evidence]: https://www.w3.org/TR/vc-data-model-2.0/#evidence
+[w3c-presentations]: https://www.w3.org/TR/vc-data-model-2.0/#presentations
+[w3c-vp]: https://www.w3.org/TR/vc-data-model-2.0/#verifiable-presentations
+[w3c-trust]: https://www.w3.org/TR/vc-data-model-2.0/#trust-model
+[w3c-securing]: https://www.w3.org/TR/vc-data-model-2.0/#securing-mechanisms
+[w3c-conformance]: https://www.w3.org/TR/vc-data-model-2.0/#conformance
+
+<!-- Related W3C specifications -->
 [bitstring]: https://w3c.github.io/vc-bitstring-status-list/

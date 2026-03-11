@@ -1,7 +1,9 @@
 # Three-Tier Cage Architecture
 
 Cardano VCR uses three tiers of MPFS cages, each serving a distinct role in the
-credential lifecycle.
+[credential lifecycle][w3c-ecosystem]. The tiers map to the W3C roles:
+[issuers][w3c-issuer], [holders][w3c-holder], and [verifiers][w3c-verifier],
+with cages acting as [verifiable data registries][w3c-registry].
 
 ## Overview
 
@@ -123,3 +125,9 @@ sequenceDiagram
     V->>V: Non-membership proof (revoked)
     A->>C: End (burn cage token, destroy instance)
 ```
+
+[w3c-ecosystem]: https://www.w3.org/TR/vc-data-model-2.0/#ecosystem-overview
+[w3c-issuer]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers
+[w3c-holder]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders
+[w3c-verifier]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier
+[w3c-registry]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries

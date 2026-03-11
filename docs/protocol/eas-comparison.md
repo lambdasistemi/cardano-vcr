@@ -135,12 +135,22 @@ However, this is not a limitation in practice:
 EAS is an Ethereum-specific system. It does not implement the W3C VC standard,
 though there is an [open issue requesting W3C VC support][eas-w3c-issue].
 
-Cardano VCR implements the W3C Verifiable Credentials Data Model 2.0 directly.
-Every concept in the specification (issuer, holder, verifier, verifiable data
-registry, credential schema, credential status, verifiable presentation) has a
-concrete mapping to the protocol.
+Cardano VCR implements the [W3C Verifiable Credentials Data Model 2.0][w3c-vc]
+directly. Every concept in the specification
+([issuer][w3c-issuer], [holder][w3c-holder], [verifier][w3c-verifier],
+[verifiable data registry][w3c-registry], [credential schema][w3c-schemas],
+[credential status][w3c-status],
+[verifiable presentation][w3c-vp]) has a concrete mapping to the protocol.
 
 See [W3C Alignment](w3c-alignment.md) for the complete mapping.
 
 [eas]: https://attest.org/
 [eas-w3c-issue]: https://github.com/ethereum-attestation-service/eas-contracts/issues/4
+[w3c-vc]: https://www.w3.org/TR/vc-data-model-2.0/
+[w3c-issuer]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-issuers
+[w3c-holder]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders
+[w3c-verifier]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifier
+[w3c-registry]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-verifiable-data-registries
+[w3c-schemas]: https://www.w3.org/TR/vc-data-model-2.0/#data-schemas
+[w3c-status]: https://www.w3.org/TR/vc-data-model-2.0/#status
+[w3c-vp]: https://www.w3.org/TR/vc-data-model-2.0/#verifiable-presentations

@@ -34,12 +34,12 @@ key = blake2b_256(schema_uid ++ recipient ++ nonce)
 
 | Field | W3C Equivalent | Description |
 |-------|---------------|-------------|
-| `schema` | `credentialSchema` | Points to a schema in a schema authority's trie. The issuer's choice of schema authority is itself a trust signal. |
-| `recipient` | `credentialSubject` | The entity the credential is about. May differ from the holder (e.g. a parent holds a child's credential). |
+| `schema` | [`credentialSchema`][w3c-schemas] | Points to a schema in a schema authority's trie. The issuer's choice of schema authority is itself a trust signal. |
+| `recipient` | [`credentialSubject`][w3c-subject] | The entity the credential is about. May differ from the [holder][w3c-holder] (e.g. a parent holds a child's credential). |
 | `refUID` | (referenced credentials) | Optional reference to another credential, possibly in a different issuer's cage. Enables credential graphs (e.g. a professional certification that references an academic degree). |
-| `expiration` | `validUntil` | Optional expiration timestamp. Off-chain verifiers check this; on-chain verifiers can check via validity ranges. |
-| `data` | (claim data) | The actual credential claims, encoded according to the referenced schema. |
-| `time` | `validFrom` | Issuance timestamp. |
+| `expiration` | [`validUntil`][w3c-validity] | Optional expiration timestamp. Off-chain verifiers check this; on-chain verifiers can check via validity ranges. |
+| `data` | ([claims][w3c-claims]) | The actual credential claims, encoded according to the referenced schema. |
+| `time` | [`validFrom`][w3c-validity] | Issuance timestamp. |
 
 ## Operations
 
@@ -133,3 +133,9 @@ Verifiers must check the `expiration` field:
 
 The issuer may periodically clean up expired credentials via Delete operations
 to keep the trie compact.
+
+[w3c-schemas]: https://www.w3.org/TR/vc-data-model-2.0/#data-schemas
+[w3c-subject]: https://www.w3.org/TR/vc-data-model-2.0/#credential-subject
+[w3c-holder]: https://www.w3.org/TR/vc-data-model-2.0/#dfn-holders
+[w3c-validity]: https://www.w3.org/TR/vc-data-model-2.0/#validity-period
+[w3c-claims]: https://www.w3.org/TR/vc-data-model-2.0/#claims
