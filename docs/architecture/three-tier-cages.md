@@ -86,7 +86,7 @@ A Plutus validator verifies a credential by:
 
 Any entity capable of computing Blake2b-256 hashes can verify a credential:
 
-1. Obtain a trusted root (via Mithril certificate or direct chain query)
+1. Obtain a trusted root (via institutional CSMT API or direct chain query)
 2. Verify the Merkle proof against the root
 3. Check expiration, schema validity, and any policy-specific rules
 

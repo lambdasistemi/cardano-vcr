@@ -21,7 +21,7 @@ enabling compact on-chain storage and efficient proof generation.
 - **Multi-authority schemas** — independent schema authorities compete on trust;
   no single entity controls the schema layer
 - **Off-chain verification** — credentials verifiable without a Cardano node,
-  via Merkle proof chains anchored to Mithril certificates
+  via Merkle proof chains anchored to institutionally published UTxO set roots
 
 ## How it works
 
@@ -42,7 +42,7 @@ verifiers, not enforced by the protocol.
 | On-chain validators (Aiken) | [cardano-mpfs-onchain][onchain] | Working |
 | Off-chain service (Haskell) | [cardano-mpfs-offchain][offchain] | Working |
 | Merkle trie library | [haskell-mts][mts] | Working |
-| UTxO set Merkle tree | [cardano-utxo-csmt][csmt] | Working (Mithril bridge pending) |
+| UTxO set Merkle tree | [cardano-utxo-csmt][csmt] | Working |
 | VCR protocol layer | This repository | Design phase |
 
 [w3c-vc]: https://www.w3.org/TR/vc-data-model-2.0/

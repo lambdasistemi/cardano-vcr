@@ -47,14 +47,17 @@ The verifier queries a Cardano node (via N2C or an API) for the cage UTxO and
 reads the root from its datum. This is authoritative but requires network access
 and a trusted node.
 
-### Level 2: Mithril-certified root
+### Level 2: Institutionally certified CSMT root
 
-The verifier obtains a Mithril certificate (signed by a quorum of stake pool
-operators) that certifies the UTxO set. It then verifies the cage UTxO's
-existence in the certified set and reads the root. No full node required — only
-Mithril certificate verification.
+The verifier obtains the current UTxO set Merkle root from a trusted institution
+(e.g. the Cardano Foundation) running [cardano-utxo-csmt][csmt]. It then
+verifies the cage UTxO's existence in the certified set via a CSMT inclusion
+proof and reads the credential root from the datum.
 
-See [Trust Chain](trust-chain.md) for the full Mithril verification path.
+No full node required — only an HTTP request for the CSMT root plus local hash
+verification.
+
+See [Trust Chain](trust-chain.md) for the full verification path.
 
 ### Level 3: Issuer-signed root
 
@@ -70,34 +73,36 @@ holder is presenting in person with government-issued ID).
 
 ## Verification without a node
 
-The complete off-chain verification flow, assuming Level 2 (Mithril):
+The complete off-chain verification flow, assuming Level 2 (institutional CSMT):
 
 ```mermaid
 sequenceDiagram
     participant H as Holder
     participant V as Verifier
-    participant M as Mithril Certificate
+    participant I as Institution (CSMT API)
 
     H->>V: Present proof bundle
-    V->>M: Verify Mithril certificate (SPO quorum signatures)
-    V->>V: Verify cage UTxO exists in certified UTxO set (CSMT proof)
-    V->>V: Extract root from cage UTxO datum
+    V->>I: Fetch current UTxO set Merkle root
+    V->>V: Verify cage UTxO exists in UTxO set (CSMT proof)
+    V->>V: Extract credential root from cage UTxO datum
     V->>V: Verify credential Merkle proof against root
     V->>V: Check expiration, schema, trust policy
     V->>V: Accept or reject
 ```
 
-At no point does the verifier contact a Cardano node. The entire verification
-is local computation over cryptographic proofs.
+The only network interaction is fetching the CSMT root. All proof verification
+is local computation.
 
 ## Offline verification
 
-If the verifier has a cached Mithril certificate and CSMT snapshot, verification
-is fully offline. The tradeoff is freshness — the cached root may be stale. A
-credential revoked after the snapshot was taken will still appear valid.
+If the verifier has a cached CSMT root, verification is fully offline. The
+tradeoff is freshness — the cached root may be stale. A credential revoked
+after the root was fetched will still appear valid.
 
 For time-sensitive credentials, the verifier can set a maximum age for the
-Mithril certificate (e.g. "I only accept certificates less than 1 hour old").
+cached root (e.g. "I only accept roots less than 5 minutes old"). The
+cardano-utxo-csmt service updates with every block (~20 seconds), so near
+real-time freshness is achievable.
 
 ## Multiple credentials
 
@@ -111,9 +116,11 @@ Presentation:
   roots:
     - { cageToken: A, root: ..., csmtProof: [...] }
     - { cageToken: B, root: ..., csmtProof: [...] }
-  mithrilCertificate: ...
+  csmtRoot: ByteArray  -- Single UTxO set root from institution
 ```
 
-One Mithril certificate can anchor multiple CSMT proofs, which anchor multiple
+One CSMT root anchors multiple cage UTxO proofs, which anchor multiple
 credential proofs. The entire bundle is self-contained and independently
-verifiable.
+verifiable (given the trusted CSMT root).
+
+[csmt]: https://github.com/cardano-foundation/cardano-utxo-csmt

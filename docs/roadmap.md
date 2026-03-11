@@ -18,7 +18,6 @@ functional; the VCR protocol layer is being specified.
 
 | Gap | Description | Blocking |
 |-----|-------------|----------|
-| Mithril bridge | cardano-utxo-csmt does not yet consume Mithril-certified roots | Off-chain verification trust chain |
 | MPFS HTTP API | Phase 5 of cardano-mpfs-offchain (Servant API, Docker deployment) | User-facing credential operations |
 | VCR protocol | This repository — schema/credential encoding, proof bundle format | Everything above MPFS |
 
@@ -43,13 +42,7 @@ functional; the VCR protocol layer is being specified.
 - Off-chain verification library (Haskell, for proof bundle verification)
 - Lightweight verification library (for mobile/browser, minimal dependencies)
 
-## Phase 4: Mithril integration
-
-- Bridge cardano-utxo-csmt to Mithril-certified UTxO snapshots
-- Complete trust chain: Mithril cert → CSMT proof → cage UTxO → credential
-- End-to-end off-chain verification without a Cardano node
-
-## Phase 5: Tooling and deployment
+## Phase 4: Tooling and deployment
 
 - CLI for schema registration and credential operations
 - HTTP API for credential issuance, revocation, and verification
