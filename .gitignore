@@ -1,0 +1,5 @@
+# MkDocs build output
+site/
+
+# LLM investigation notes (local only)
+.llm/
