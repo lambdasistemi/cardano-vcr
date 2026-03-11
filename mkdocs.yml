@@ -1,0 +1,54 @@
+site_name: Cardano VCR
+site_url: https://lambdasistemi.github.io/cardano-vcr/
+repo_url: https://github.com/lambdasistemi/cardano-vcr
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - toc.integrate
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Protocol:
+      - Overview: protocol/overview.md
+      - W3C Alignment: protocol/w3c-alignment.md
+      - Comparison with EAS: protocol/eas-comparison.md
+  - Architecture:
+      - Three-Tier Cages: architecture/three-tier-cages.md
+      - Schema Authorities: architecture/schema-authorities.md
+      - Credential Issuers: architecture/credential-issuers.md
+      - Resolvers: architecture/resolvers.md
+      - On-chain and Off-chain Credentials: architecture/on-off-chain.md
+  - Verification:
+      - On-chain Verification: verification/on-chain.md
+      - Off-chain Verification: verification/off-chain.md
+      - Trust Chain: verification/trust-chain.md
+  - Roadmap: roadmap.md
