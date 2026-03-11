@@ -41,6 +41,7 @@ nav:
       - Overview: protocol/overview.md
       - W3C Alignment: protocol/w3c-alignment.md
       - Comparison with EAS: protocol/eas-comparison.md
+      - Comparison with Supply Chain Security: protocol/supply-chain-comparison.md
   - Architecture:
       - Three-Tier Cages: architecture/three-tier-cages.md
       - Schema Authorities: architecture/schema-authorities.md
